@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
       final patientData = await apiHelper.getPatientData(userInfo['id']);
       String Utilisateur = userInfo['id'].toString();
       print(
-          'voici le json avaec données du patient( $Utilisateur ) : $patientData');
+          'voici le fichier json avaec données du patient( $Utilisateur ) : $patientData');
 
       if (patientData == null || patientData.isEmpty) {
         // Afficher un popup pour demander de compléter les informations
