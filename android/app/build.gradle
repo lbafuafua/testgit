@@ -1,0 +1,58 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // Le plugin Flutter doit être appliqué après Android et Kotlin
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.findone" // Assurez-vous que cela correspond au package dans AndroidManifest.xml
+    compileSdk = 34 // Définissez la version du SDK de compilation (34 est recommandé pour les projets récents)
+
+    ndkVersion = "22.1.7171670" // Facultatif : spécifiez votre version NDK si nécessaire
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Compatibilité Java
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Version cible pour Kotlin
+    }
+
+    defaultConfig {
+        applicationId = "com.example.findone" // L'identifiant unique de votre application
+        minSdk = 21 // Version minimale requise pour Flutter
+        targetSdk = 34 // Version cible pour les appareils Android récents
+        versionCode = 1 // Numéro de version interne (incremental)
+        versionName = "1.0.0" // Nom de la version visible par les utilisateurs
+    }
+
+    buildTypes {
+        release {
+            // Configurez ici votre signature pour les builds de production
+            signingConfig signingConfigs.debug // Remplacez avec une configuration pour la release si nécessaire
+            minifyEnabled false // Désactivez la réduction de code pour éviter des problèmes en debug
+            shrinkResources false // Désactivez la compression des ressources pour les builds de debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Optionnel : Configurez ProGuard si nécessaire
+        }
+        debug {
+            applicationIdSuffix ".debug" // Suffixe pour différencier les builds de debug
+            versionNameSuffix "-debug" // Ajoute un suffixe au nom de la version
+        }
+    }
+
+    lintOptions {
+        abortOnError false // Empêche la compilation de s'arrêter sur des erreurs de lint
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}" // Évite les conflits de ressources
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Chemin relatif vers le projet Flutter
+}

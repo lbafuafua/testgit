@@ -1,0 +1,4 @@
+<resources>
+    <color name="blue_background">#2196F3</color> <!-- Bleu Flutter -->
+	<color name="ic_launcher_background">#FFFFFF</color>
+</resources>

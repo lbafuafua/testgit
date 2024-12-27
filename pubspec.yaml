@@ -1,0 +1,60 @@
+name: findone
+description: "Find One."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  carousel_slider: ^5.0.0
+  intl_phone_number_input: ^0.7.0+2
+  sqflite: ^2.0.0+3
+  connectivity_plus: ^6.1.0
+  path: ^1.8.0
+  http: ^0.13.3
+  image_picker: ^0.8.9
+  cupertino_icons: ^1.0.8
+  local_auth: ^2.1.6
+  googleapis: ^9.0.0
+  googleapis_auth: ^1.0.1
+  flutter_native_splash: ^2.4.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: 0.14.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/findone.png" # Chemin de l'image pour l'icône
+  adaptive_icon_background: "#FFFFFF" # Couleur de fond ou image
+  adaptive_icon_foreground: "assets/findone.png" # Image de premier plan
+
+flutter_native_splash:
+  color: "#283593" # Fond bleu foncé
+  image: assets/hospital.png # Chemin vers votre logo
+  android: true
+  ios: true
+  web: false
+  android_gravity: center
+  ios_content_mode: scaleAspectFit
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/doctor.jpeg
+    - assets/profile.jpg
+    - assets/hospital.png
+    - assets/HJ.jpg
+    - assets/MDN.jpg
+    - assets/logofo.png
+    - assets/findone.png
+    - assets/logo.png
+    - assets/cles/findone-441109-642c3efad92b.json
